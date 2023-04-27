@@ -1,0 +1,23 @@
+inputSet:
+  name: input set
+  identifier: input_set
+  orgIdentifier: DoNotDelete_Org_Sayon
+  projectIdentifier: DoNotDelete_Project_Sayon
+  pipeline:
+    identifier: pipeline
+    stages:
+      - stage:
+          identifier: stage
+          type: Deployment
+          spec:
+            service:
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: artifact
+            environment:
+              infrastructureDefinitions:
+                - identifier: infra
