@@ -1,6 +1,6 @@
 pipeline:
-  name: pipeline
-  identifier: pipeline
+  name: pipeline_3
+  identifier: pipeline_3
   projectIdentifier: DoNotDelete_Project_Sayon
   orgIdentifier: DoNotDelete_Org_Sayon
   tags: {}
