@@ -1,6 +1,6 @@
 inputSet:
-  name: input set2
-  identifier: input_set2
+  name: inputset2
+  identifier: inputset2
   orgIdentifier: DoNotDelete_Org_Sayon
   projectIdentifier: DoNotDelete_Project_Sayon
   pipeline:
