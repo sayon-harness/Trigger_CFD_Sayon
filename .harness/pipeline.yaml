@@ -85,3 +85,4 @@ pipeline:
             type: String
             description: Resource Stage variable by Sayon
             value: resource
+  allowStageExecutions: true
