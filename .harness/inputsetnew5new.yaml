@@ -1,0 +1,23 @@
+inputSet:
+  name: inputsetnew5new
+  identifier: inputsetnew5new
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  projectIdentifier: DoNotDelete_Sayon
+  pipeline:
+    identifier: pipeline_CFD
+    stages:
+      - stage:
+          identifier: stage_CFD
+          type: Deployment
+          spec:
+            service:
+              serviceInputs:
+                serviceDefinition:
+                  type: Ssh
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: artifact
+            environment:
+              infrastructureDefinitions:
+                - identifier: infra
