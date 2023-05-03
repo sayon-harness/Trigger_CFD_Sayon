@@ -1,0 +1,76 @@
+pipeline:
+  name: CDS58878
+  identifier: NGPipeAutoNGPipeAutoQDMmyO4XBxJrxMddoRroTUetu
+  projectIdentifier: CDS58878
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  tags: {}
+  stages:
+    - stage:
+        name: Stage1
+        identifier: Stage1
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: Ssh
+          service:
+            serviceRef: CDS58878
+            serviceInputs:
+              serviceDefinition:
+                type: Ssh
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
+          environment:
+            environmentRef: CDS58878
+            deployToAll: false
+            infrastructureDefinitions: <+input>
+          execution:
+            steps:
+              - step:
+                  name: Deploy
+                  identifier: Deploy
+                  timeout: 10m
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
+                  template:
+                    templateRef: account.Default_Install_Jar_Bash
+                    templateInputs:
+                      type: Command
+                      spec:
+                        environmentVariables:
+                          - name: DestinationDirectory
+                            type: String
+                            value: $HOME/<+service.name>/<+env.name>
+                          - name: WorkingDirectory
+                            type: String
+                            value: $HOME/<+service.name>/<+env.name>/tomcat/bin
+            rollbackSteps:
+              - step:
+                  name: Rollback
+                  identifier: Rollback
+                  timeout: 10m
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
+                  template:
+                    templateRef: account.Default_Install_Jar_Bash
+                    templateInputs:
+                      type: Command
+                      spec:
+                        environmentVariables:
+                          - name: DestinationDirectory
+                            type: String
+                            value: $HOME/<+service.name>/<+env.name>
+                          - name: WorkingDirectory
+                            type: String
+                            value: $HOME/<+service.name>/<+env.name>/tomcat/bin
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
