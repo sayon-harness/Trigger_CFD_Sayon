@@ -1,0 +1,16 @@
+template:
+  name: pipeTemp1
+  identifier: pipeTemp1
+  versionLabel: "1"
+  type: Pipeline
+  projectIdentifier: DoNotDelete_AmitSingh
+  orgIdentifier: default
+  tags: {}
+  spec:
+    stages:
+      - stage:
+          name: rewrre
+          identifier: rewr
+          template:
+            templateRef: stage112
+            versionLabel: "21"
