@@ -1,13 +1,13 @@
 inputSet:
-  name: inputsetnew5new
-  identifier: inputsetnew5new
+  name: CDS58878InputSet
+  identifier: CDS58878InputSet
   orgIdentifier: Ng_Pipelines_K8s_Organisations
-  projectIdentifier: DoNotDelete_Sayon
+  projectIdentifier: CDS58878
   pipeline:
-    identifier: pipeline_CFD
+    identifier: CDS58878
     stages:
       - stage:
-          identifier: stage_CFD
+          identifier: Stage1
           type: Deployment
           spec:
             service:
