@@ -1,5 +1,5 @@
 pipeline:
-  name: pipelineWithTemp
+  name: pipelineWithTemp12
   identifier: pipelineWithTemp
   template:
     templateRef: pipeTemp1
