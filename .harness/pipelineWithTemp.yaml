@@ -1,0 +1,9 @@
+pipeline:
+  name: pipelineWithTemp
+  identifier: pipelineWithTemp
+  template:
+    templateRef: pipeTemp1
+    versionLabel: "1"
+  tags: {}
+  projectIdentifier: DoNotDelete_AmitSingh
+  orgIdentifier: default
