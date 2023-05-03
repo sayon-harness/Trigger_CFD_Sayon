@@ -27,7 +27,10 @@ template:
                         type: Inline
                         spec:
                           script: <+input>
-                      environmentVariables: []
+                      environmentVariables:
+                        - name: hgfhfhg
+                          type: String
+                          value: <+input>
                       outputVariables: []
                     timeout: <+input>
           tags: {}
