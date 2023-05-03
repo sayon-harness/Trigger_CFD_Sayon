@@ -15,6 +15,6 @@ template:
       source:
         type: Inline
         spec:
-          script: uytuyt
+          script: <+input>.allowedValues(main)
       environmentVariables: []
       outputVariables: []
