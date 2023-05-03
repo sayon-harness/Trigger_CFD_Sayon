@@ -14,3 +14,8 @@ template:
           template:
             templateRef: stage112
             versionLabel: "21"
+    variables:
+      - name: custom
+        type: String
+        description: ""
+        value: custom
