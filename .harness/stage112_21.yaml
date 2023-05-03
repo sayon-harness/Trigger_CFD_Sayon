@@ -1,0 +1,19 @@
+template:
+  name: stage112
+  identifier: stage112
+  versionLabel: "21"
+  type: Stage
+  projectIdentifier: DoNotDelete_AmitSingh
+  orgIdentifier: default
+  tags: {}
+  spec:
+    type: Custom
+    spec:
+      execution:
+        steps:
+          - step:
+              name: rewr
+              identifier: rewr
+              template:
+                templateRef: step11
+                versionLabel: "1"
