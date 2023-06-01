@@ -1,0 +1,35 @@
+pipeline:
+  name: CDS70204
+  identifier: CDS70204
+  projectIdentifier: CDS70204
+  orgIdentifier: Ng_Pipelines_K8s_Organisations
+  tags: {}
+  stages:
+    - stage:
+        name: Stage1
+        identifier: Stage1
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo <+pipeline.variables.var1>
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 1m
+        tags: {}
+  variables:
+    - name: var1
+      type: String
+      description: ""
+      value: <+input>
